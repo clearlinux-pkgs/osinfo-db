@@ -1,0 +1,33 @@
+From 46788cff1af9df8f9dd7ccadc096683e0fe3dbc4 Mon Sep 17 00:00:00 2001
+From: "Simental Magana, Marcos" <marcos.simental.magana@intel.com>
+Date: Wed, 29 May 2019 17:49:20 -0500
+Subject: [PATCH] Add makefile
+
+---
+ Makefile | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 Makefile
+
+diff --git a/Makefile b/Makefile
+new file mode 100644
+index 0000000..328f4eb
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,14 @@
++PREFIX ?= /usr
++DATADIR ?= $(DESTDIR)$(PREFIX)/share
++
++.PHONY: build
++build:
++	@echo "Nothing to build"
++
++.PHONY: install
++install:
++	@echo "Nothing to install"
++
++.PHONY: test
++test:
++	@echo "Nothing to test"
+-- 
+2.21.0
+
