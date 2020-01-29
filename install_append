@@ -1,1 +1,0 @@
-osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}

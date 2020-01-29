@@ -5,19 +5,17 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20190504
-Release  : 1
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20190504.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20190504.tar.xz
-Source99 : https://releases.pagure.org/libosinfo/osinfo-db-20190504.tar.xz.asc
+Version  : 20191125
+Release  : 2
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20191125.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20191125.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20191125.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: osinfo-db-data = %{version}-%{release}
 Requires: osinfo-db-license = %{version}-%{release}
-BuildRequires : clr-hardware-files
-BuildRequires : osinfo-db-tools
-Patch1: 0001-Add-makefile.patch
+Patch1: 0001-Add-Makefile.patch
 
 %description
 No detailed description available
@@ -39,15 +37,16 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20190504
+%setup -q -n osinfo-db-20191125
+cd %{_builddir}/osinfo-db-20191125
 %patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1559170408
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1580335012
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -60,14 +59,11 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1559170408
+export SOURCE_DATE_EPOCH=1580335012
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/LICENSE
+cp %{_builddir}/osinfo-db-20191125/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
-## install_append content
-osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
-## install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -126,8 +122,6 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/device/xen.org/xen-vkbd.xml
 /usr/share/osinfo/device/xen.org/xen-vscsi.xml
 /usr/share/osinfo/device/xen.org/xen-vtpm.xml
-/usr/share/osinfo/install-script/centos.org/centos-kickstart-desktop.xml
-/usr/share/osinfo/install-script/centos.org/centos-kickstart-jeos.xml
 /usr/share/osinfo/install-script/debian.org/debian-preseed-desktop.xml
 /usr/share/osinfo/install-script/debian.org/debian-preseed-jeos.xml
 /usr/share/osinfo/install-script/fedoraproject.org/fedora-kickstart-desktop.xml
@@ -152,7 +146,9 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/altlinux.org/alt-8.0.xml
 /usr/share/osinfo/os/altlinux.org/alt-8.1.xml
 /usr/share/osinfo/os/altlinux.org/alt-8.2.xml
+/usr/share/osinfo/os/altlinux.org/alt-9.0.xml
 /usr/share/osinfo/os/altlinux.org/alt-p8.starterkits.xml
+/usr/share/osinfo/os/altlinux.org/alt-p9.starterkits.xml
 /usr/share/osinfo/os/altlinux.org/alt-sisyphus.xml
 /usr/share/osinfo/os/altlinux.org/altlinux-1.0.xml
 /usr/share/osinfo/os/altlinux.org/altlinux-2.0.xml
@@ -165,6 +161,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/altlinux.org/altlinux-6.0.xml
 /usr/share/osinfo/os/altlinux.org/altlinux-7.0.xml
 /usr/share/osinfo/os/android-x86.org/android-x86-8.1.xml
+/usr/share/osinfo/os/android-x86.org/android-x86-9.0.xml
 /usr/share/osinfo/os/apple.com/macosx-10.0.xml
 /usr/share/osinfo/os/apple.com/macosx-10.1.xml
 /usr/share/osinfo/os/apple.com/macosx-10.2.xml
@@ -179,6 +176,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/asianux.com/asianux-7.0.xml
 /usr/share/osinfo/os/asianux.com/asianux-7.1.xml
 /usr/share/osinfo/os/asianux.com/asianux-7.2.xml
+/usr/share/osinfo/os/asianux.com/asianux-7.3.xml
 /usr/share/osinfo/os/asianux.com/asianux-unknown.xml
 /usr/share/osinfo/os/centos.org/centos-5.0.xml
 /usr/share/osinfo/os/centos.org/centos-5.1.xml
@@ -204,6 +202,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/centos.org/centos-6.8.xml
 /usr/share/osinfo/os/centos.org/centos-6.9.xml
 /usr/share/osinfo/os/centos.org/centos-7.0.xml
+/usr/share/osinfo/os/centos.org/centos-8.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.0.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.1.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.2.xml
@@ -214,6 +213,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/debian.org/debian-1.1.xml
 /usr/share/osinfo/os/debian.org/debian-1.2.xml
 /usr/share/osinfo/os/debian.org/debian-1.3.xml
+/usr/share/osinfo/os/debian.org/debian-10.xml
 /usr/share/osinfo/os/debian.org/debian-2.0.xml
 /usr/share/osinfo/os/debian.org/debian-2.1.xml
 /usr/share/osinfo/os/debian.org/debian-2.2.xml
@@ -290,8 +290,16 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.0.xml
 /usr/share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.1.xml
 /usr/share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.2.xml
+/usr/share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.3.xml
+/usr/share/osinfo/os/dragonflybsd.org/dragonflybsd-5.6.xml
+/usr/share/osinfo/os/elementary.io/elementary-5.0.xml
+/usr/share/osinfo/os/endlessos.com/eos-3.1.xml
+/usr/share/osinfo/os/endlessos.com/eos-3.2.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.3.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.4.xml
+/usr/share/osinfo/os/endlessos.com/eos-3.5.xml
+/usr/share/osinfo/os/endlessos.com/eos-3.6.xml
+/usr/share/osinfo/os/endlessos.com/eos-3.7.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-1.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-10.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-11.xml
@@ -316,6 +324,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/fedoraproject.org/fedora-29.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-3.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-30.xml
+/usr/share/osinfo/os/fedoraproject.org/fedora-31.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-4.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-5.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -327,6 +336,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/fedoraproject.org/silverblue-28.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-29.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-30.xml
+/usr/share/osinfo/os/fedoraproject.org/silverblue-31.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-1.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-10.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-10.1.xml
@@ -336,6 +346,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/freebsd.org/freebsd-11.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-11.1.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-11.2.xml
+/usr/share/osinfo/os/freebsd.org/freebsd-11.3.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-12.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.xml
@@ -433,6 +444,8 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/mandriva.com/mes-5.1.xml
 /usr/share/osinfo/os/microsoft.com/msdos-6.22.xml
 /usr/share/osinfo/os/microsoft.com/win-1.0.xml
+/usr/share/osinfo/os/microsoft.com/win-10.d/post-installable-drivers.xml
+/usr/share/osinfo/os/microsoft.com/win-10.d/pre-installable-drivers.xml
 /usr/share/osinfo/os/microsoft.com/win-10.xml
 /usr/share/osinfo/os/microsoft.com/win-2.0.xml
 /usr/share/osinfo/os/microsoft.com/win-2.1.xml
@@ -446,13 +459,21 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/microsoft.com/win-2k8.xml
 /usr/share/osinfo/os/microsoft.com/win-2k8r2.xml
 /usr/share/osinfo/os/microsoft.com/win-3.1.xml
+/usr/share/osinfo/os/microsoft.com/win-7.d/post-installable-drivers.xml
+/usr/share/osinfo/os/microsoft.com/win-7.d/pre-installable-drivers.xml
 /usr/share/osinfo/os/microsoft.com/win-7.xml
+/usr/share/osinfo/os/microsoft.com/win-8.1.d/post-installable-drivers.xml
+/usr/share/osinfo/os/microsoft.com/win-8.1.d/pre-installable-drivers.xml
 /usr/share/osinfo/os/microsoft.com/win-8.1.xml
+/usr/share/osinfo/os/microsoft.com/win-8.d/post-installable-drivers.xml
+/usr/share/osinfo/os/microsoft.com/win-8.d/pre-installable-drivers.xml
 /usr/share/osinfo/os/microsoft.com/win-8.xml
 /usr/share/osinfo/os/microsoft.com/win-95.xml
 /usr/share/osinfo/os/microsoft.com/win-98.xml
 /usr/share/osinfo/os/microsoft.com/win-me.xml
 /usr/share/osinfo/os/microsoft.com/win-vista.xml
+/usr/share/osinfo/os/microsoft.com/win-xp.d/post-installable-drivers.xml
+/usr/share/osinfo/os/microsoft.com/win-xp.d/pre-installable-drivers.xml
 /usr/share/osinfo/os/microsoft.com/win-xp.xml
 /usr/share/osinfo/os/microsoft.com/winnt-3.1.xml
 /usr/share/osinfo/os/microsoft.com/winnt-3.5.xml
@@ -480,6 +501,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/netbsd.org/netbsd-7.1.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-7.2.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-8.0.xml
+/usr/share/osinfo/os/netbsd.org/netbsd-8.1.xml
 /usr/share/osinfo/os/novell.com/netware-4.xml
 /usr/share/osinfo/os/novell.com/netware-5.xml
 /usr/share/osinfo/os/novell.com/netware-6.xml
@@ -504,6 +526,8 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/openbsd.org/openbsd-6.2.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-6.3.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-6.4.xml
+/usr/share/osinfo/os/openbsd.org/openbsd-6.5.xml
+/usr/share/osinfo/os/openbsd.org/openbsd-6.6.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.3.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-11.0.xml
@@ -524,6 +548,43 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/opensuse.org/opensuse-factory.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-tumbleweed.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-unknown.xml
+/usr/share/osinfo/os/oracle.com/oel-4.4.xml
+/usr/share/osinfo/os/oracle.com/oel-4.5.xml
+/usr/share/osinfo/os/oracle.com/oel-4.6.xml
+/usr/share/osinfo/os/oracle.com/oel-4.7.xml
+/usr/share/osinfo/os/oracle.com/oel-4.8.xml
+/usr/share/osinfo/os/oracle.com/oel-4.9.xml
+/usr/share/osinfo/os/oracle.com/oel-5.0.xml
+/usr/share/osinfo/os/oracle.com/oel-5.1.xml
+/usr/share/osinfo/os/oracle.com/oel-5.2.xml
+/usr/share/osinfo/os/oracle.com/oel-5.3.xml
+/usr/share/osinfo/os/oracle.com/oel-5.4.xml
+/usr/share/osinfo/os/oracle.com/ol-5.10.xml
+/usr/share/osinfo/os/oracle.com/ol-5.11.xml
+/usr/share/osinfo/os/oracle.com/ol-5.5.xml
+/usr/share/osinfo/os/oracle.com/ol-5.6.xml
+/usr/share/osinfo/os/oracle.com/ol-5.7.xml
+/usr/share/osinfo/os/oracle.com/ol-5.8.xml
+/usr/share/osinfo/os/oracle.com/ol-5.9.xml
+/usr/share/osinfo/os/oracle.com/ol-6.0.xml
+/usr/share/osinfo/os/oracle.com/ol-6.1.xml
+/usr/share/osinfo/os/oracle.com/ol-6.10.xml
+/usr/share/osinfo/os/oracle.com/ol-6.2.xml
+/usr/share/osinfo/os/oracle.com/ol-6.3.xml
+/usr/share/osinfo/os/oracle.com/ol-6.4.xml
+/usr/share/osinfo/os/oracle.com/ol-6.5.xml
+/usr/share/osinfo/os/oracle.com/ol-6.6.xml
+/usr/share/osinfo/os/oracle.com/ol-6.7.xml
+/usr/share/osinfo/os/oracle.com/ol-6.8.xml
+/usr/share/osinfo/os/oracle.com/ol-6.9.xml
+/usr/share/osinfo/os/oracle.com/ol-7.0.xml
+/usr/share/osinfo/os/oracle.com/ol-7.1.xml
+/usr/share/osinfo/os/oracle.com/ol-7.2.xml
+/usr/share/osinfo/os/oracle.com/ol-7.3.xml
+/usr/share/osinfo/os/oracle.com/ol-7.4.xml
+/usr/share/osinfo/os/oracle.com/ol-7.5.xml
+/usr/share/osinfo/os/oracle.com/ol-7.6.xml
+/usr/share/osinfo/os/oracle.com/ol-8.0.xml
 /usr/share/osinfo/os/oracle.com/solaris-11.xml
 /usr/share/osinfo/os/pureos.net/pureos-8.xml
 /usr/share/osinfo/os/redhat.com/rhel-2.1.1.xml
@@ -586,8 +647,10 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/redhat.com/rhel-7.4.xml
 /usr/share/osinfo/os/redhat.com/rhel-7.5.xml
 /usr/share/osinfo/os/redhat.com/rhel-7.6.xml
+/usr/share/osinfo/os/redhat.com/rhel-7.7.xml
 /usr/share/osinfo/os/redhat.com/rhel-8-unknown.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.0.xml
+/usr/share/osinfo/os/redhat.com/rhel-8.1.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
@@ -653,6 +716,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/suse.com/caasp-3.0.xml
 /usr/share/osinfo/os/suse.com/caasp-unknown.xml
 /usr/share/osinfo/os/suse.com/sle-15-unknown.xml
+/usr/share/osinfo/os/suse.com/sle-15.1.xml
 /usr/share/osinfo/os/suse.com/sle-15.xml
 /usr/share/osinfo/os/suse.com/sle-unknown.xml
 /usr/share/osinfo/os/suse.com/sled-10.1.xml
@@ -669,6 +733,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/suse.com/sled-12.1.xml
 /usr/share/osinfo/os/suse.com/sled-12.2.xml
 /usr/share/osinfo/os/suse.com/sled-12.3.xml
+/usr/share/osinfo/os/suse.com/sled-12.4.xml
 /usr/share/osinfo/os/suse.com/sled-12.xml
 /usr/share/osinfo/os/suse.com/sled-9.xml
 /usr/share/osinfo/os/suse.com/sles-10.1.xml
@@ -685,6 +750,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/suse.com/sles-12.1.xml
 /usr/share/osinfo/os/suse.com/sles-12.2.xml
 /usr/share/osinfo/os/suse.com/sles-12.3.xml
+/usr/share/osinfo/os/suse.com/sles-12.4.xml
 /usr/share/osinfo/os/suse.com/sles-12.xml
 /usr/share/osinfo/os/suse.com/sles-9.xml
 /usr/share/osinfo/os/system76.com/popos-17.10.xml
@@ -709,6 +775,7 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 /usr/share/osinfo/os/ubuntu.com/ubuntu-18.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-18.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-19.04.xml
+/usr/share/osinfo/os/ubuntu.com/ubuntu-19.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
@@ -793,4 +860,4 @@ osinfo-db-import  --root %{buildroot} --dir /usr/share/osinfo %{SOURCE0}
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/osinfo-db/LICENSE
+/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec

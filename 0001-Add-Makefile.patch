@@ -1,0 +1,27 @@
+From e5bf359b824a31cee8adba11465e1c164e4bfc99 Mon Sep 17 00:00:00 2001
+From: Auke Kok <auke-jan.h.kok@intel.com>
+Date: Wed, 29 Jan 2020 13:44:26 -0800
+Subject: [PATCH] Add Makefile
+
+---
+ Makefile | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 Makefile
+
+diff --git a/Makefile b/Makefile
+new file mode 100644
+index 0000000..e7fa0ca
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,8 @@
++all:
++	@true
++
++install:
++	mkdir -p $(DESTDIR)/usr/share/osinfo
++	for t in datamap device install-script LICENSE os platform schema VERSION; do\
++	    cp -arv $$t $(DESTDIR)/usr/share/osinfo/; \
++	done
+-- 
+2.25.0
+
