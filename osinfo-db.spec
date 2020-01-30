@@ -6,7 +6,7 @@
 #
 Name     : osinfo-db
 Version  : 20191125
-Release  : 2
+Release  : 3
 URL      : https://releases.pagure.org/libosinfo/osinfo-db-20191125.tar.xz
 Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20191125.tar.xz
 Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20191125.tar.xz.asc
@@ -16,6 +16,7 @@ License  : GPL-2.0
 Requires: osinfo-db-data = %{version}-%{release}
 Requires: osinfo-db-license = %{version}-%{release}
 Patch1: 0001-Add-Makefile.patch
+Patch2: 0002-Add-clearlinux-rolling-release-images.patch
 
 %description
 No detailed description available
@@ -40,13 +41,14 @@ license components for the osinfo-db package.
 %setup -q -n osinfo-db-20191125
 cd %{_builddir}/osinfo-db-20191125
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580335012
+export SOURCE_DATE_EPOCH=1580414276
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,7 +61,7 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1580335012
+export SOURCE_DATE_EPOCH=1580414276
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
 cp %{_builddir}/osinfo-db-20191125/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
@@ -210,6 +212,7 @@ cp %{_builddir}/osinfo-db-20191125/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.4.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.5.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.4.0.xml
+/usr/share/osinfo/os/clearlinux.org/clearlinux-rolling.xml
 /usr/share/osinfo/os/debian.org/debian-1.1.xml
 /usr/share/osinfo/os/debian.org/debian-1.2.xml
 /usr/share/osinfo/os/debian.org/debian-1.3.xml
