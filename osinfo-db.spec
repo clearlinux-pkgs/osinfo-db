@@ -5,18 +5,17 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20191125
-Release  : 3
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20191125.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20191125.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20191125.tar.xz.asc
+Version  : 20200214
+Release  : 4
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20200214.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20200214.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20200214.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: osinfo-db-data = %{version}-%{release}
 Requires: osinfo-db-license = %{version}-%{release}
 Patch1: 0001-Add-Makefile.patch
-Patch2: 0002-Add-clearlinux-rolling-release-images.patch
 
 %description
 No detailed description available
@@ -38,17 +37,16 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20191125
-cd %{_builddir}/osinfo-db-20191125
+%setup -q -n osinfo-db-20200214
+cd %{_builddir}/osinfo-db-20200214
 %patch1 -p1
-%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580414276
+export SOURCE_DATE_EPOCH=1584809526
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -61,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1580414276
+export SOURCE_DATE_EPOCH=1584809526
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20191125/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20200214/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -205,6 +203,7 @@ cp %{_builddir}/osinfo-db-20191125/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/centos.org/centos-6.9.xml
 /usr/share/osinfo/os/centos.org/centos-7.0.xml
 /usr/share/osinfo/os/centos.org/centos-8.xml
+/usr/share/osinfo/os/centos.org/centos-stream-8.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.0.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.1.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.2.xml
@@ -654,6 +653,7 @@ cp %{_builddir}/osinfo-db-20191125/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/redhat.com/rhel-8-unknown.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.1.xml
+/usr/share/osinfo/os/redhat.com/rhel-8.2.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
@@ -737,6 +737,7 @@ cp %{_builddir}/osinfo-db-20191125/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/suse.com/sled-12.2.xml
 /usr/share/osinfo/os/suse.com/sled-12.3.xml
 /usr/share/osinfo/os/suse.com/sled-12.4.xml
+/usr/share/osinfo/os/suse.com/sled-12.5.xml
 /usr/share/osinfo/os/suse.com/sled-12.xml
 /usr/share/osinfo/os/suse.com/sled-9.xml
 /usr/share/osinfo/os/suse.com/sles-10.1.xml
@@ -754,11 +755,14 @@ cp %{_builddir}/osinfo-db-20191125/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/suse.com/sles-12.2.xml
 /usr/share/osinfo/os/suse.com/sles-12.3.xml
 /usr/share/osinfo/os/suse.com/sles-12.4.xml
+/usr/share/osinfo/os/suse.com/sles-12.5.xml
 /usr/share/osinfo/os/suse.com/sles-12.xml
 /usr/share/osinfo/os/suse.com/sles-9.xml
 /usr/share/osinfo/os/system76.com/popos-17.10.xml
 /usr/share/osinfo/os/system76.com/popos-18.04.xml
 /usr/share/osinfo/os/system76.com/popos-18.10.xml
+/usr/share/osinfo/os/system76.com/popos-19.04.xml
+/usr/share/osinfo/os/system76.com/popos-19.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-10.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-11.04.xml
@@ -779,6 +783,7 @@ cp %{_builddir}/osinfo-db-20191125/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/ubuntu.com/ubuntu-18.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-19.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-19.10.xml
+/usr/share/osinfo/os/ubuntu.com/ubuntu-20.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
