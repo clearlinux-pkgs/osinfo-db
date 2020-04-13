@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20200214
-Release  : 4
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20200214.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20200214.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20200214.tar.xz.asc
+Version  : 20200325
+Release  : 5
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20200325.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20200325.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20200325.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20200214
-cd %{_builddir}/osinfo-db-20200214
+%setup -q -n osinfo-db-20200325
+cd %{_builddir}/osinfo-db-20200325
 %patch1 -p1
 
 %build
@@ -46,23 +46,23 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1584809526
+export SOURCE_DATE_EPOCH=1586815382
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1584809526
+export SOURCE_DATE_EPOCH=1586815382
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20200214/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -177,6 +177,7 @@ cp %{_builddir}/osinfo-db-20200214/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/asianux.com/asianux-7.1.xml
 /usr/share/osinfo/os/asianux.com/asianux-7.2.xml
 /usr/share/osinfo/os/asianux.com/asianux-7.3.xml
+/usr/share/osinfo/os/asianux.com/asianux-8.0.xml
 /usr/share/osinfo/os/asianux.com/asianux-unknown.xml
 /usr/share/osinfo/os/centos.org/centos-5.0.xml
 /usr/share/osinfo/os/centos.org/centos-5.1.xml
@@ -650,6 +651,7 @@ cp %{_builddir}/osinfo-db-20200214/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/redhat.com/rhel-7.5.xml
 /usr/share/osinfo/os/redhat.com/rhel-7.6.xml
 /usr/share/osinfo/os/redhat.com/rhel-7.7.xml
+/usr/share/osinfo/os/redhat.com/rhel-7.8.xml
 /usr/share/osinfo/os/redhat.com/rhel-8-unknown.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.1.xml
