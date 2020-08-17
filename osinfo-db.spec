@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20200325
-Release  : 5
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20200325.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20200325.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20200325.tar.xz.asc
+Version  : 20200813
+Release  : 6
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20200813.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20200813.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20200813.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20200325
-cd %{_builddir}/osinfo-db-20200325
+%setup -q -n osinfo-db-20200813
+cd %{_builddir}/osinfo-db-20200813
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1586815382
+export SOURCE_DATE_EPOCH=1597678268
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1586815382
+export SOURCE_DATE_EPOCH=1597678268
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20200813/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -104,6 +104,7 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/device/pcisig.com/pci-1af4-1049.d/class.xml
 /usr/share/osinfo/device/pcisig.com/pci-1af4-1050.d/class.xml
 /usr/share/osinfo/device/pcisig.com/pci-1af4-1052.d/class.xml
+/usr/share/osinfo/device/pcisig.com/pci-1af4-105a.d/class.xml
 /usr/share/osinfo/device/pcisig.com/pci-1b36-0004.d/class.xml
 /usr/share/osinfo/device/pcisig.com/pci-1b36-0100.d/class.xml
 /usr/share/osinfo/device/pcisig.com/pci-8086-100e.d/class.xml
@@ -303,6 +304,7 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/endlessos.com/eos-3.5.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.6.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.7.xml
+/usr/share/osinfo/os/endlessos.com/eos-3.8.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-1.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-10.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-11.xml
@@ -328,6 +330,7 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/fedoraproject.org/fedora-3.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-30.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-31.xml
+/usr/share/osinfo/os/fedoraproject.org/fedora-32.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-4.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-5.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -340,6 +343,7 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/fedoraproject.org/silverblue-29.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-30.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-31.xml
+/usr/share/osinfo/os/fedoraproject.org/silverblue-32.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-1.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-10.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-10.1.xml
@@ -350,7 +354,9 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/freebsd.org/freebsd-11.1.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-11.2.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-11.3.xml
+/usr/share/osinfo/os/freebsd.org/freebsd-11.4.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-12.0.xml
+/usr/share/osinfo/os/freebsd.org/freebsd-12.1.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -414,6 +420,7 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/mageia.org/mageia-4.xml
 /usr/share/osinfo/os/mageia.org/mageia-5.xml
 /usr/share/osinfo/os/mageia.org/mageia-6.xml
+/usr/share/osinfo/os/mageia.org/mageia-7.xml
 /usr/share/osinfo/os/mandriva.com/mandrake-10.0.xml
 /usr/share/osinfo/os/mandriva.com/mandrake-10.1.xml
 /usr/share/osinfo/os/mandriva.com/mandrake-10.2.xml
@@ -445,6 +452,7 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/mandriva.com/mbs-1.0.xml
 /usr/share/osinfo/os/mandriva.com/mes-5.0.xml
 /usr/share/osinfo/os/mandriva.com/mes-5.1.xml
+/usr/share/osinfo/os/manjaro.org/manjaro-rolling.xml
 /usr/share/osinfo/os/microsoft.com/msdos-6.22.xml
 /usr/share/osinfo/os/microsoft.com/win-1.0.xml
 /usr/share/osinfo/os/microsoft.com/win-10.d/post-installable-drivers.xml
@@ -505,6 +513,11 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/netbsd.org/netbsd-7.2.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-8.0.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-8.1.xml
+/usr/share/osinfo/os/netbsd.org/netbsd-8.2.xml
+/usr/share/osinfo/os/netbsd.org/netbsd-9.0.xml
+/usr/share/osinfo/os/nixos.org/nixos-20.03.xml
+/usr/share/osinfo/os/nixos.org/nixos-unknown.xml
+/usr/share/osinfo/os/nixos.org/nixos-unstable.xml
 /usr/share/osinfo/os/novell.com/netware-4.xml
 /usr/share/osinfo/os/novell.com/netware-5.xml
 /usr/share/osinfo/os/novell.com/netware-6.xml
@@ -531,6 +544,7 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/openbsd.org/openbsd-6.4.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-6.5.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-6.6.xml
+/usr/share/osinfo/os/openbsd.org/openbsd-6.7.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.3.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-11.0.xml
@@ -545,6 +559,7 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/opensuse.org/opensuse-13.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-15.0.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-15.1.xml
+/usr/share/osinfo/os/opensuse.org/opensuse-15.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.1.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.3.xml
@@ -587,7 +602,11 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/oracle.com/ol-7.4.xml
 /usr/share/osinfo/os/oracle.com/ol-7.5.xml
 /usr/share/osinfo/os/oracle.com/ol-7.6.xml
+/usr/share/osinfo/os/oracle.com/ol-7.7.xml
+/usr/share/osinfo/os/oracle.com/ol-7.8.xml
 /usr/share/osinfo/os/oracle.com/ol-8.0.xml
+/usr/share/osinfo/os/oracle.com/ol-8.1.xml
+/usr/share/osinfo/os/oracle.com/ol-8.2.xml
 /usr/share/osinfo/os/oracle.com/solaris-11.xml
 /usr/share/osinfo/os/pureos.net/pureos-8.xml
 /usr/share/osinfo/os/redhat.com/rhel-2.1.1.xml
@@ -652,10 +671,12 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/redhat.com/rhel-7.6.xml
 /usr/share/osinfo/os/redhat.com/rhel-7.7.xml
 /usr/share/osinfo/os/redhat.com/rhel-7.8.xml
+/usr/share/osinfo/os/redhat.com/rhel-7.9.xml
 /usr/share/osinfo/os/redhat.com/rhel-8-unknown.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.1.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.2.xml
+/usr/share/osinfo/os/redhat.com/rhel-8.3.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
@@ -722,6 +743,7 @@ cp %{_builddir}/osinfo-db-20200325/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/suse.com/caasp-unknown.xml
 /usr/share/osinfo/os/suse.com/sle-15-unknown.xml
 /usr/share/osinfo/os/suse.com/sle-15.1.xml
+/usr/share/osinfo/os/suse.com/sle-15.2.xml
 /usr/share/osinfo/os/suse.com/sle-15.xml
 /usr/share/osinfo/os/suse.com/sle-unknown.xml
 /usr/share/osinfo/os/suse.com/sled-10.1.xml
