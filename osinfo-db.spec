@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20200813
-Release  : 6
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20200813.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20200813.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20200813.tar.xz.asc
+Version  : 20201011
+Release  : 7
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20201011.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20201011.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20201011.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20200813
-cd %{_builddir}/osinfo-db-20200813
+%setup -q -n osinfo-db-20201011
+cd %{_builddir}/osinfo-db-20201011
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1597678268
+export SOURCE_DATE_EPOCH=1602519886
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1597678268
+export SOURCE_DATE_EPOCH=1602519886
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20200813/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20201011/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -148,6 +148,7 @@ cp %{_builddir}/osinfo-db-20200813/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/altlinux.org/alt-8.1.xml
 /usr/share/osinfo/os/altlinux.org/alt-8.2.xml
 /usr/share/osinfo/os/altlinux.org/alt-9.0.xml
+/usr/share/osinfo/os/altlinux.org/alt-9.1.xml
 /usr/share/osinfo/os/altlinux.org/alt-p8.starterkits.xml
 /usr/share/osinfo/os/altlinux.org/alt-p9.starterkits.xml
 /usr/share/osinfo/os/altlinux.org/alt-sisyphus.xml
@@ -305,6 +306,9 @@ cp %{_builddir}/osinfo-db-20200813/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/endlessos.com/eos-3.6.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.7.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.8.xml
+/usr/share/osinfo/os/fedoraproject.org/coreos-next.xml
+/usr/share/osinfo/os/fedoraproject.org/coreos-stable.xml
+/usr/share/osinfo/os/fedoraproject.org/coreos-testing.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-1.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-10.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-11.xml
@@ -331,6 +335,7 @@ cp %{_builddir}/osinfo-db-20200813/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/fedoraproject.org/fedora-30.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-31.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-32.xml
+/usr/share/osinfo/os/fedoraproject.org/fedora-33.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-4.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-5.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -344,6 +349,9 @@ cp %{_builddir}/osinfo-db-20200813/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/fedoraproject.org/silverblue-30.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-31.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-32.xml
+/usr/share/osinfo/os/fedoraproject.org/silverblue-33.xml
+/usr/share/osinfo/os/fedoraproject.org/silverblue-rawhide.xml
+/usr/share/osinfo/os/fedoraproject.org/silverblue-unknown.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-1.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-10.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-10.1.xml
@@ -408,6 +416,7 @@ cp %{_builddir}/osinfo-db-20200813/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/gnome.org/gnome-continuous-3.10.xml
 /usr/share/osinfo/os/gnome.org/gnome-continuous-3.12.xml
 /usr/share/osinfo/os/gnome.org/gnome-continuous-3.14.xml
+/usr/share/osinfo/os/guix.gnu.org/guix-1.1.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-nightly.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1alpha1.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1alpha2.xml
@@ -787,6 +796,7 @@ cp %{_builddir}/osinfo-db-20200813/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/system76.com/popos-18.10.xml
 /usr/share/osinfo/os/system76.com/popos-19.04.xml
 /usr/share/osinfo/os/system76.com/popos-19.10.xml
+/usr/share/osinfo/os/system76.com/popos-20.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-10.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-11.04.xml
