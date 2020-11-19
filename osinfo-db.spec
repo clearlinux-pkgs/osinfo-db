@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20201015
-Release  : 8
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20201015.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20201015.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20201015.tar.xz.asc
+Version  : 20201119
+Release  : 9
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20201119.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20201119.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20201119.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20201015
-cd %{_builddir}/osinfo-db-20201015
+%setup -q -n osinfo-db-20201119
+cd %{_builddir}/osinfo-db-20201119
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1602773029
+export SOURCE_DATE_EPOCH=1605800376
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1602773029
+export SOURCE_DATE_EPOCH=1605800376
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20201015/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20201119/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -299,6 +299,7 @@ cp %{_builddir}/osinfo-db-20201015/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/dragonflybsd.org/dragonflybsd-5.6.xml
 /usr/share/osinfo/os/elementary.io/elementary-5.0.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.1.xml
+/usr/share/osinfo/os/endlessos.com/eos-3.10.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.2.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.3.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.4.xml
@@ -306,6 +307,7 @@ cp %{_builddir}/osinfo-db-20201015/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/endlessos.com/eos-3.6.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.7.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.8.xml
+/usr/share/osinfo/os/endlessos.com/eos-3.9.xml
 /usr/share/osinfo/os/fedoraproject.org/coreos-next.xml
 /usr/share/osinfo/os/fedoraproject.org/coreos-stable.xml
 /usr/share/osinfo/os/fedoraproject.org/coreos-testing.xml
@@ -365,6 +367,7 @@ cp %{_builddir}/osinfo-db-20201015/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/freebsd.org/freebsd-11.4.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-12.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-12.1.xml
+/usr/share/osinfo/os/freebsd.org/freebsd-12.2.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -423,6 +426,10 @@ cp %{_builddir}/osinfo-db-20201015/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/haiku-os.org/haiku-r1alpha3.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1alpha4.1.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1beta1.xml
+/usr/share/osinfo/os/libosinfo.org/linux-2016.xml
+/usr/share/osinfo/os/libosinfo.org/linux-2018.xml
+/usr/share/osinfo/os/libosinfo.org/linux-2020.xml
+/usr/share/osinfo/os/libosinfo.org/unknown.xml
 /usr/share/osinfo/os/mageia.org/mageia-1.xml
 /usr/share/osinfo/os/mageia.org/mageia-2.xml
 /usr/share/osinfo/os/mageia.org/mageia-3.xml
@@ -799,6 +806,7 @@ cp %{_builddir}/osinfo-db-20201015/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/system76.com/popos-19.04.xml
 /usr/share/osinfo/os/system76.com/popos-19.10.xml
 /usr/share/osinfo/os/system76.com/popos-20.04.xml
+/usr/share/osinfo/os/system76.com/popos-20.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-10.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-11.04.xml
