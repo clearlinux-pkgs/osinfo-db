@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20201119
-Release  : 9
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20201119.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20201119.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20201119.tar.xz.asc
+Version  : 20201218
+Release  : 10
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20201218.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20201218.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20201218.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20201119
-cd %{_builddir}/osinfo-db-20201119
+%setup -q -n osinfo-db-20201218
+cd %{_builddir}/osinfo-db-20201218
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1605800376
+export SOURCE_DATE_EPOCH=1609174399
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1605800376
+export SOURCE_DATE_EPOCH=1609174399
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20201119/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20201218/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -532,6 +532,7 @@ cp %{_builddir}/osinfo-db-20201119/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/netbsd.org/netbsd-8.2.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-9.0.xml
 /usr/share/osinfo/os/nixos.org/nixos-20.03.xml
+/usr/share/osinfo/os/nixos.org/nixos-20.09.xml
 /usr/share/osinfo/os/nixos.org/nixos-unknown.xml
 /usr/share/osinfo/os/nixos.org/nixos-unstable.xml
 /usr/share/osinfo/os/novell.com/netware-4.xml
