@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20210312
-Release  : 13
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20210312.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20210312.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20210312.tar.xz.asc
+Version  : 20210426
+Release  : 14
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20210426.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20210426.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20210426.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20210312
-cd %{_builddir}/osinfo-db-20210312
+%setup -q -n osinfo-db-20210426
+cd %{_builddir}/osinfo-db-20210426
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1615562771
+export SOURCE_DATE_EPOCH=1619533393
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1615562771
+export SOURCE_DATE_EPOCH=1619533393
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20210312/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20210426/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -140,6 +140,7 @@ cp %{_builddir}/osinfo-db-20210312/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/install-script/redhat.com/rhel-kickstart-jeos.xml
 /usr/share/osinfo/install-script/ubuntu.com/ubuntu-preseed-desktop.xml
 /usr/share/osinfo/install-script/ubuntu.com/ubuntu-preseed-jeos.xml
+/usr/share/osinfo/os/almalinux.org/almalinux-8.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.10.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.11.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.12.xml
@@ -219,6 +220,9 @@ cp %{_builddir}/osinfo-db-20210312/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.4.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.5.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.4.0.xml
+/usr/share/osinfo/os/cirros-cloud.net/cirros-0.5.0.xml
+/usr/share/osinfo/os/cirros-cloud.net/cirros-0.5.1.xml
+/usr/share/osinfo/os/cirros-cloud.net/cirros-0.5.2.xml
 /usr/share/osinfo/os/clearlinux.org/clearlinux-rolling.xml
 /usr/share/osinfo/os/debian.org/debian-1.1.xml
 /usr/share/osinfo/os/debian.org/debian-1.2.xml
@@ -375,6 +379,7 @@ cp %{_builddir}/osinfo-db-20210312/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/freebsd.org/freebsd-12.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-12.1.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-12.2.xml
+/usr/share/osinfo/os/freebsd.org/freebsd-13.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -444,6 +449,7 @@ cp %{_builddir}/osinfo-db-20210312/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/mageia.org/mageia-5.xml
 /usr/share/osinfo/os/mageia.org/mageia-6.xml
 /usr/share/osinfo/os/mageia.org/mageia-7.xml
+/usr/share/osinfo/os/mageia.org/mageia-8.xml
 /usr/share/osinfo/os/mandriva.com/mandrake-10.0.xml
 /usr/share/osinfo/os/mandriva.com/mandrake-10.1.xml
 /usr/share/osinfo/os/mandriva.com/mandrake-10.2.xml
@@ -584,6 +590,7 @@ cp %{_builddir}/osinfo-db-20210312/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/opensuse.org/opensuse-15.0.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-15.1.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-15.2.xml
+/usr/share/osinfo/os/opensuse.org/opensuse-15.3.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.1.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.3.xml
