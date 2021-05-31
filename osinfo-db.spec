@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20210426
-Release  : 14
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20210426.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20210426.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20210426.tar.xz.asc
+Version  : 20210531
+Release  : 15
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20210531.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20210531.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20210531.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20210426
-cd %{_builddir}/osinfo-db-20210426
+%setup -q -n osinfo-db-20210531
+cd %{_builddir}/osinfo-db-20210531
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1619533393
+export SOURCE_DATE_EPOCH=1622493667
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1619533393
+export SOURCE_DATE_EPOCH=1622493667
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20210426/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20210531/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
