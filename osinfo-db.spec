@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20210531
-Release  : 15
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20210531.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20210531.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20210531.tar.xz.asc
+Version  : 20210621
+Release  : 16
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20210621.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20210621.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20210621.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20210531
-cd %{_builddir}/osinfo-db-20210531
+%setup -q -n osinfo-db-20210621
+cd %{_builddir}/osinfo-db-20210621
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622493667
+export SOURCE_DATE_EPOCH=1624290357
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1622493667
+export SOURCE_DATE_EPOCH=1624290357
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20210531/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20210621/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -145,6 +145,7 @@ cp %{_builddir}/osinfo-db-20210531/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.11.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.12.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.13.xml
+/usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.14.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -213,6 +214,7 @@ cp %{_builddir}/osinfo-db-20210531/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/centos.org/centos-7.0.xml
 /usr/share/osinfo/os/centos.org/centos-8.xml
 /usr/share/osinfo/os/centos.org/centos-stream-8.xml
+/usr/share/osinfo/os/centos.org/centos-stream-9.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.0.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.1.xml
 /usr/share/osinfo/os/cirros-cloud.net/cirros-0.3.2.xml
@@ -546,6 +548,7 @@ cp %{_builddir}/osinfo-db-20210531/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/netbsd.org/netbsd-9.0.xml
 /usr/share/osinfo/os/nixos.org/nixos-20.03.xml
 /usr/share/osinfo/os/nixos.org/nixos-20.09.xml
+/usr/share/osinfo/os/nixos.org/nixos-21.05.xml
 /usr/share/osinfo/os/nixos.org/nixos-unknown.xml
 /usr/share/osinfo/os/nixos.org/nixos-unstable.xml
 /usr/share/osinfo/os/novell.com/netware-4.xml
@@ -575,6 +578,8 @@ cp %{_builddir}/osinfo-db-20210531/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/openbsd.org/openbsd-6.5.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-6.6.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-6.7.xml
+/usr/share/osinfo/os/openbsd.org/openbsd-6.8.xml
+/usr/share/osinfo/os/openbsd.org/openbsd-6.9.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.3.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-11.0.xml
@@ -780,6 +785,7 @@ cp %{_builddir}/osinfo-db-20210531/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/suse.com/sle-15-unknown.xml
 /usr/share/osinfo/os/suse.com/sle-15.1.xml
 /usr/share/osinfo/os/suse.com/sle-15.2.xml
+/usr/share/osinfo/os/suse.com/sle-15.3.xml
 /usr/share/osinfo/os/suse.com/sle-15.xml
 /usr/share/osinfo/os/suse.com/sle-unknown.xml
 /usr/share/osinfo/os/suse.com/sled-10.1.xml
@@ -800,6 +806,7 @@ cp %{_builddir}/osinfo-db-20210531/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/suse.com/sled-12.5.xml
 /usr/share/osinfo/os/suse.com/sled-12.xml
 /usr/share/osinfo/os/suse.com/sled-9.xml
+/usr/share/osinfo/os/suse.com/slem-5.0.xml
 /usr/share/osinfo/os/suse.com/sles-10.1.xml
 /usr/share/osinfo/os/suse.com/sles-10.2.xml
 /usr/share/osinfo/os/suse.com/sles-10.3.xml
