@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20210621
-Release  : 16
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20210621.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20210621.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20210621.tar.xz.asc
+Version  : 20210806
+Release  : 17
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20210806.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20210806.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20210806.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20210621
-cd %{_builddir}/osinfo-db-20210621
+%setup -q -n osinfo-db-20210806
+cd %{_builddir}/osinfo-db-20210806
 %patch1 -p1
 
 %build
@@ -46,23 +46,23 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1624290357
+export SOURCE_DATE_EPOCH=1628257678
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1624290357
+export SOURCE_DATE_EPOCH=1628257678
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20210621/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20210806/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -156,6 +156,8 @@ cp %{_builddir}/osinfo-db-20210621/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/altlinux.org/alt-8.2.xml
 /usr/share/osinfo/os/altlinux.org/alt-9.0.xml
 /usr/share/osinfo/os/altlinux.org/alt-9.1.xml
+/usr/share/osinfo/os/altlinux.org/alt-9.2.xml
+/usr/share/osinfo/os/altlinux.org/alt-p10.starterkits.xml
 /usr/share/osinfo/os/altlinux.org/alt-p8.starterkits.xml
 /usr/share/osinfo/os/altlinux.org/alt-p9.starterkits.xml
 /usr/share/osinfo/os/altlinux.org/alt-sisyphus.xml
@@ -440,6 +442,8 @@ cp %{_builddir}/osinfo-db-20210621/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/haiku-os.org/haiku-r1alpha3.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1alpha4.1.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1beta1.xml
+/usr/share/osinfo/os/haiku-os.org/haiku-r1beta2.xml
+/usr/share/osinfo/os/haiku-os.org/haiku-r1beta3.xml
 /usr/share/osinfo/os/libosinfo.org/linux-2016.xml
 /usr/share/osinfo/os/libosinfo.org/linux-2018.xml
 /usr/share/osinfo/os/libosinfo.org/linux-2020.xml
@@ -714,6 +718,7 @@ cp %{_builddir}/osinfo-db-20210621/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/redhat.com/rhel-8.2.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.3.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.4.xml
+/usr/share/osinfo/os/redhat.com/rhel-8.5.xml
 /usr/share/osinfo/os/redhat.com/rhel-9-unknown.xml
 /usr/share/osinfo/os/redhat.com/rhel-9.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
