@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEE926C2BDACC177B (fabiano@fidencio.org)
 #
 Name     : osinfo-db
-Version  : 20210809
-Release  : 18
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20210809.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20210809.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20210809.tar.xz.asc
+Version  : 20210903
+Release  : 19
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20210903.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20210903.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20210903.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20210809
-cd %{_builddir}/osinfo-db-20210809
+%setup -q -n osinfo-db-20210903
+cd %{_builddir}/osinfo-db-20210903
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1628532103
+export SOURCE_DATE_EPOCH=1630686684
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1628532103
+export SOURCE_DATE_EPOCH=1630686684
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20210809/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20210903/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -232,6 +232,7 @@ cp %{_builddir}/osinfo-db-20210809/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/debian.org/debian-1.2.xml
 /usr/share/osinfo/os/debian.org/debian-1.3.xml
 /usr/share/osinfo/os/debian.org/debian-10.xml
+/usr/share/osinfo/os/debian.org/debian-11.xml
 /usr/share/osinfo/os/debian.org/debian-2.0.xml
 /usr/share/osinfo/os/debian.org/debian-2.1.xml
 /usr/share/osinfo/os/debian.org/debian-2.2.xml
@@ -500,6 +501,7 @@ cp %{_builddir}/osinfo-db-20210809/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/microsoft.com/win-2k12r2.xml
 /usr/share/osinfo/os/microsoft.com/win-2k16.xml
 /usr/share/osinfo/os/microsoft.com/win-2k19.xml
+/usr/share/osinfo/os/microsoft.com/win-2k22.xml
 /usr/share/osinfo/os/microsoft.com/win-2k3.xml
 /usr/share/osinfo/os/microsoft.com/win-2k3r2.xml
 /usr/share/osinfo/os/microsoft.com/win-2k8.xml
@@ -859,6 +861,7 @@ cp %{_builddir}/osinfo-db-20210809/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/ubuntu.com/ubuntu-19.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-20.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-20.10.xml
+/usr/share/osinfo/os/ubuntu.com/ubuntu-21.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
