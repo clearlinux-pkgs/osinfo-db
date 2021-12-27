@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x97D9123DE37A484F (toso@posteo.net)
 #
 Name     : osinfo-db
-Version  : 20211013
-Release  : 20
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20211013.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20211013.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20211013.tar.xz.asc
+Version  : 20211216
+Release  : 21
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20211216.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20211216.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20211216.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20211013
-cd %{_builddir}/osinfo-db-20211013
+%setup -q -n osinfo-db-20211216
+cd %{_builddir}/osinfo-db-20211216
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1634158086
+export SOURCE_DATE_EPOCH=1640639709
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1634158086
+export SOURCE_DATE_EPOCH=1640639709
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20211216/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -146,6 +146,7 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.12.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.13.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.14.xml
+/usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.15.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -190,6 +191,12 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/asianux.com/asianux-7.3.xml
 /usr/share/osinfo/os/asianux.com/asianux-8.0.xml
 /usr/share/osinfo/os/asianux.com/asianux-unknown.xml
+/usr/share/osinfo/os/cclinux.org/circle-8-unknown.xml
+/usr/share/osinfo/os/cclinux.org/circle-8.4.xml
+/usr/share/osinfo/os/cclinux.org/circle-8.5.xml
+/usr/share/osinfo/os/cclinux.org/circle-9-unknown.xml
+/usr/share/osinfo/os/cclinux.org/circle-9.0.xml
+/usr/share/osinfo/os/cclinux.org/circle-unknown.xml
 /usr/share/osinfo/os/centos.org/centos-5.0.xml
 /usr/share/osinfo/os/centos.org/centos-5.1.xml
 /usr/share/osinfo/os/centos.org/centos-5.10.xml
@@ -322,6 +329,7 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/endlessos.com/eos-3.7.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.8.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.9.xml
+/usr/share/osinfo/os/endlessos.com/eos-4.0.xml
 /usr/share/osinfo/os/fedoraproject.org/coreos-next.xml
 /usr/share/osinfo/os/fedoraproject.org/coreos-stable.xml
 /usr/share/osinfo/os/fedoraproject.org/coreos-testing.xml
@@ -353,6 +361,7 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/fedoraproject.org/fedora-32.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-33.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-34.xml
+/usr/share/osinfo/os/fedoraproject.org/fedora-35.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-4.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-5.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -368,6 +377,7 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/fedoraproject.org/silverblue-32.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-33.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-34.xml
+/usr/share/osinfo/os/fedoraproject.org/silverblue-35.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-rawhide.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-unknown.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-1.0.xml
@@ -384,6 +394,7 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/freebsd.org/freebsd-12.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-12.1.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-12.2.xml
+/usr/share/osinfo/os/freebsd.org/freebsd-12.3.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-13.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.xml
@@ -430,6 +441,7 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/freebsd.org/freebsd-9.2.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-9.3.xml
 /usr/share/osinfo/os/freedos.org/freedos-1.2.xml
+/usr/share/osinfo/os/freenix.net/freenix-14.2.xml
 /usr/share/osinfo/os/gentoo.org/gentoo-rolling.xml
 /usr/share/osinfo/os/gnome.org/gnome-3.6.xml
 /usr/share/osinfo/os/gnome.org/gnome-3.8.xml
@@ -437,6 +449,9 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/gnome.org/gnome-continuous-3.12.xml
 /usr/share/osinfo/os/gnome.org/gnome-continuous-3.14.xml
 /usr/share/osinfo/os/guix.gnu.org/guix-1.1.xml
+/usr/share/osinfo/os/guix.gnu.org/guix-1.3.xml
+/usr/share/osinfo/os/guix.gnu.org/guix-hurd-latest.xml
+/usr/share/osinfo/os/guix.gnu.org/guix-latest.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-nightly.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1alpha1.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1alpha2.xml
@@ -445,6 +460,7 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/haiku-os.org/haiku-r1beta1.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1beta2.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1beta3.xml
+/usr/share/osinfo/os/hyperbola.info/hyperbola-03.xml
 /usr/share/osinfo/os/libosinfo.org/linux-2016.xml
 /usr/share/osinfo/os/libosinfo.org/linux-2018.xml
 /usr/share/osinfo/os/libosinfo.org/linux-2020.xml
@@ -527,6 +543,7 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/microsoft.com/winnt-3.5.xml
 /usr/share/osinfo/os/microsoft.com/winnt-3.51.xml
 /usr/share/osinfo/os/microsoft.com/winnt-4.0.xml
+/usr/share/osinfo/os/miraclelinux.com/miraclelinux-8.4.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-0.8.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-0.9.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-1.0.xml
@@ -646,9 +663,13 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/oracle.com/ol-7.6.xml
 /usr/share/osinfo/os/oracle.com/ol-7.7.xml
 /usr/share/osinfo/os/oracle.com/ol-7.8.xml
+/usr/share/osinfo/os/oracle.com/ol-7.9.xml
 /usr/share/osinfo/os/oracle.com/ol-8.0.xml
 /usr/share/osinfo/os/oracle.com/ol-8.1.xml
 /usr/share/osinfo/os/oracle.com/ol-8.2.xml
+/usr/share/osinfo/os/oracle.com/ol-8.3.xml
+/usr/share/osinfo/os/oracle.com/ol-8.4.xml
+/usr/share/osinfo/os/oracle.com/ol-8.5.xml
 /usr/share/osinfo/os/oracle.com/solaris-11.xml
 /usr/share/osinfo/os/pureos.net/pureos-8.xml
 /usr/share/osinfo/os/redhat.com/rhel-2.1.1.xml
@@ -752,6 +773,7 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/rockylinux.org/rocky-8-unknown.xml
 /usr/share/osinfo/os/rockylinux.org/rocky-8.4.xml
 /usr/share/osinfo/os/rockylinux.org/rocky-8.5.xml
+/usr/share/osinfo/os/rockylinux.org/rocky-8.6.xml
 /usr/share/osinfo/os/rockylinux.org/rocky-9-unknown.xml
 /usr/share/osinfo/os/rockylinux.org/rocky-9.0.xml
 /usr/share/osinfo/os/rockylinux.org/rocky-unknown.xml
@@ -845,6 +867,7 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/system76.com/popos-19.10.xml
 /usr/share/osinfo/os/system76.com/popos-20.04.xml
 /usr/share/osinfo/os/system76.com/popos-20.10.xml
+/usr/share/osinfo/os/trisquel.info/trisquel-9.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-10.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-11.04.xml
@@ -868,6 +891,7 @@ cp %{_builddir}/osinfo-db-20211013/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/ubuntu.com/ubuntu-20.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-20.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-21.04.xml
+/usr/share/osinfo/os/ubuntu.com/ubuntu-21.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
