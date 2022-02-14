@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x97D9123DE37A484F (toso@posteo.net)
 #
 Name     : osinfo-db
-Version  : 20211216
-Release  : 21
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20211216.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20211216.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20211216.tar.xz.asc
+Version  : 20220214
+Release  : 22
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20220214.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20220214.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20220214.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20211216
-cd %{_builddir}/osinfo-db-20211216
+%setup -q -n osinfo-db-20220214
+cd %{_builddir}/osinfo-db-20220214
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640639709
+export SOURCE_DATE_EPOCH=1644856945
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1640639709
+export SOURCE_DATE_EPOCH=1644856945
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20211216/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20220214/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -152,6 +152,7 @@ cp %{_builddir}/osinfo-db-20211216/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.8.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.9.xml
+/usr/share/osinfo/os/altlinux.org/alt-10.0.xml
 /usr/share/osinfo/os/altlinux.org/alt-8.0.xml
 /usr/share/osinfo/os/altlinux.org/alt-8.1.xml
 /usr/share/osinfo/os/altlinux.org/alt-8.2.xml
@@ -603,6 +604,7 @@ cp %{_builddir}/osinfo-db-20211216/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/openbsd.org/openbsd-6.7.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-6.8.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-6.9.xml
+/usr/share/osinfo/os/openbsd.org/openbsd-7.0.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.3.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-11.0.xml
@@ -671,7 +673,9 @@ cp %{_builddir}/osinfo-db-20211216/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/oracle.com/ol-8.4.xml
 /usr/share/osinfo/os/oracle.com/ol-8.5.xml
 /usr/share/osinfo/os/oracle.com/solaris-11.xml
+/usr/share/osinfo/os/pureos.net/pureos-10.xml
 /usr/share/osinfo/os/pureos.net/pureos-8.xml
+/usr/share/osinfo/os/pureos.net/pureos-9.xml
 /usr/share/osinfo/os/redhat.com/rhel-2.1.1.xml
 /usr/share/osinfo/os/redhat.com/rhel-2.1.2.xml
 /usr/share/osinfo/os/redhat.com/rhel-2.1.3.xml
