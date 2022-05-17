@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x97D9123DE37A484F (toso@posteo.net)
 #
 Name     : osinfo-db
-Version  : 20220214
-Release  : 22
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20220214.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20220214.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20220214.tar.xz.asc
+Version  : 20220516
+Release  : 23
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20220516.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20220516.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20220516.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20220214
-cd %{_builddir}/osinfo-db-20220214
+%setup -q -n osinfo-db-20220516
+cd %{_builddir}/osinfo-db-20220516
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1644856945
+export SOURCE_DATE_EPOCH=1652752723
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1644856945
+export SOURCE_DATE_EPOCH=1652752723
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20220214/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-20220516/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -363,6 +363,7 @@ cp %{_builddir}/osinfo-db-20220214/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/fedoraproject.org/fedora-33.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-34.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-35.xml
+/usr/share/osinfo/os/fedoraproject.org/fedora-36.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-4.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-5.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -379,6 +380,7 @@ cp %{_builddir}/osinfo-db-20220214/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/fedoraproject.org/silverblue-33.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-34.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-35.xml
+/usr/share/osinfo/os/fedoraproject.org/silverblue-36.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-rawhide.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-unknown.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-1.0.xml
@@ -573,6 +575,7 @@ cp %{_builddir}/osinfo-db-20220214/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/nixos.org/nixos-20.03.xml
 /usr/share/osinfo/os/nixos.org/nixos-20.09.xml
 /usr/share/osinfo/os/nixos.org/nixos-21.05.xml
+/usr/share/osinfo/os/nixos.org/nixos-21.11.xml
 /usr/share/osinfo/os/nixos.org/nixos-unknown.xml
 /usr/share/osinfo/os/nixos.org/nixos-unstable.xml
 /usr/share/osinfo/os/novell.com/netware-4.xml
@@ -896,6 +899,7 @@ cp %{_builddir}/osinfo-db-20220214/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/ubuntu.com/ubuntu-20.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-21.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-21.10.xml
+/usr/share/osinfo/os/ubuntu.com/ubuntu-22.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
