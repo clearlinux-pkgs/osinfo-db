@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x97D9123DE37A484F (toso@posteo.net)
 #
 Name     : osinfo-db
-Version  : 20220516
-Release  : 23
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20220516.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20220516.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20220516.tar.xz.asc
+Version  : 20220727
+Release  : 24
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20220727.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20220727.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20220727.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20220516
-cd %{_builddir}/osinfo-db-20220516
+%setup -q -n osinfo-db-20220727
+cd %{_builddir}/osinfo-db-20220727
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1652752723
+export SOURCE_DATE_EPOCH=1658941559
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1652752723
+export SOURCE_DATE_EPOCH=1658941559
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-20220516/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
 %make_install
 
 %files
@@ -141,12 +141,14 @@ cp %{_builddir}/osinfo-db-20220516/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/install-script/ubuntu.com/ubuntu-preseed-desktop.xml
 /usr/share/osinfo/install-script/ubuntu.com/ubuntu-preseed-jeos.xml
 /usr/share/osinfo/os/almalinux.org/almalinux-8.xml
+/usr/share/osinfo/os/almalinux.org/almalinux-9.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.10.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.11.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.12.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.13.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.14.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.15.xml
+/usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.16.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -370,6 +372,7 @@ cp %{_builddir}/osinfo-db-20220516/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/fedoraproject.org/fedora-7.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-8.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-9.xml
+/usr/share/osinfo/os/fedoraproject.org/fedora-eln.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-rawhide.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-unknown.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-28.xml
@@ -399,6 +402,7 @@ cp %{_builddir}/osinfo-db-20220516/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/freebsd.org/freebsd-12.2.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-12.3.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-13.0.xml
+/usr/share/osinfo/os/freebsd.org/freebsd-13.1.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -467,6 +471,7 @@ cp %{_builddir}/osinfo-db-20220516/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/libosinfo.org/linux-2016.xml
 /usr/share/osinfo/os/libosinfo.org/linux-2018.xml
 /usr/share/osinfo/os/libosinfo.org/linux-2020.xml
+/usr/share/osinfo/os/libosinfo.org/linux-2022.xml
 /usr/share/osinfo/os/libosinfo.org/unknown.xml
 /usr/share/osinfo/os/mageia.org/mageia-1.xml
 /usr/share/osinfo/os/mageia.org/mageia-2.xml
@@ -576,6 +581,7 @@ cp %{_builddir}/osinfo-db-20220516/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/nixos.org/nixos-20.09.xml
 /usr/share/osinfo/os/nixos.org/nixos-21.05.xml
 /usr/share/osinfo/os/nixos.org/nixos-21.11.xml
+/usr/share/osinfo/os/nixos.org/nixos-22.05.xml
 /usr/share/osinfo/os/nixos.org/nixos-unknown.xml
 /usr/share/osinfo/os/nixos.org/nixos-unstable.xml
 /usr/share/osinfo/os/novell.com/netware-4.xml
@@ -624,6 +630,7 @@ cp %{_builddir}/osinfo-db-20220516/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/opensuse.org/opensuse-15.1.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-15.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-15.3.xml
+/usr/share/osinfo/os/opensuse.org/opensuse-15.4.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.1.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.3.xml
@@ -749,6 +756,7 @@ cp %{_builddir}/osinfo-db-20220516/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/redhat.com/rhel-8.3.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.4.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.5.xml
+/usr/share/osinfo/os/redhat.com/rhel-8.6.xml
 /usr/share/osinfo/os/redhat.com/rhel-9-unknown.xml
 /usr/share/osinfo/os/redhat.com/rhel-9.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
@@ -828,6 +836,7 @@ cp %{_builddir}/osinfo-db-20220516/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/suse.com/sle-15.1.xml
 /usr/share/osinfo/os/suse.com/sle-15.2.xml
 /usr/share/osinfo/os/suse.com/sle-15.3.xml
+/usr/share/osinfo/os/suse.com/sle-15.4.xml
 /usr/share/osinfo/os/suse.com/sle-15.xml
 /usr/share/osinfo/os/suse.com/sle-unknown.xml
 /usr/share/osinfo/os/suse.com/sled-10.1.xml
@@ -849,6 +858,8 @@ cp %{_builddir}/osinfo-db-20220516/LICENSE %{buildroot}/usr/share/package-licens
 /usr/share/osinfo/os/suse.com/sled-12.xml
 /usr/share/osinfo/os/suse.com/sled-9.xml
 /usr/share/osinfo/os/suse.com/slem-5.0.xml
+/usr/share/osinfo/os/suse.com/slem-5.1.xml
+/usr/share/osinfo/os/suse.com/slem-5.2.xml
 /usr/share/osinfo/os/suse.com/sles-10.1.xml
 /usr/share/osinfo/os/suse.com/sles-10.2.xml
 /usr/share/osinfo/os/suse.com/sles-10.3.xml
