@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x97D9123DE37A484F (toso@posteo.net)
 #
 Name     : osinfo-db
-Version  : 20220727
-Release  : 24
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20220727.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20220727.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20220727.tar.xz.asc
+Version  : 20220830
+Release  : 25
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20220830.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20220830.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20220830.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20220727
-cd %{_builddir}/osinfo-db-20220727
+%setup -q -n osinfo-db-20220830
+cd %{_builddir}/osinfo-db-20220830
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1658941559
+export SOURCE_DATE_EPOCH=1661878795
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,7 +59,7 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1658941559
+export SOURCE_DATE_EPOCH=1661878795
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
 cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
@@ -757,8 +757,10 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/redhat.com/rhel-8.4.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.5.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.6.xml
+/usr/share/osinfo/os/redhat.com/rhel-8.7.xml
 /usr/share/osinfo/os/redhat.com/rhel-9-unknown.xml
 /usr/share/osinfo/os/redhat.com/rhel-9.0.xml
+/usr/share/osinfo/os/redhat.com/rhel-9.1.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
@@ -789,8 +791,10 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/rockylinux.org/rocky-8.4.xml
 /usr/share/osinfo/os/rockylinux.org/rocky-8.5.xml
 /usr/share/osinfo/os/rockylinux.org/rocky-8.6.xml
+/usr/share/osinfo/os/rockylinux.org/rocky-8.xml
 /usr/share/osinfo/os/rockylinux.org/rocky-9-unknown.xml
 /usr/share/osinfo/os/rockylinux.org/rocky-9.0.xml
+/usr/share/osinfo/os/rockylinux.org/rocky-9.xml
 /usr/share/osinfo/os/rockylinux.org/rocky-unknown.xml
 /usr/share/osinfo/os/scientificlinux.org/scientificlinux-5.0.xml
 /usr/share/osinfo/os/scientificlinux.org/scientificlinux-5.1.xml
@@ -911,6 +915,7 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/ubuntu.com/ubuntu-21.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-21.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-22.04.xml
+/usr/share/osinfo/os/ubuntu.com/ubuntu-22.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
@@ -922,6 +927,12 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/ubuntu.com/ubuntu-8.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-9.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-9.10.xml
+/usr/share/osinfo/os/univention.de/ucs-4.0.xml
+/usr/share/osinfo/os/univention.de/ucs-4.1.xml
+/usr/share/osinfo/os/univention.de/ucs-4.2.xml
+/usr/share/osinfo/os/univention.de/ucs-4.3.xml
+/usr/share/osinfo/os/univention.de/ucs-4.4.xml
+/usr/share/osinfo/os/univention.de/ucs-5.0.xml
 /usr/share/osinfo/os/voidlinux.org/voidlinux-rolling.xml
 /usr/share/osinfo/platform/linux-kvm.org/qemu-kvm-1.0.1.xml
 /usr/share/osinfo/platform/linux-kvm.org/qemu-kvm-1.0.xml
