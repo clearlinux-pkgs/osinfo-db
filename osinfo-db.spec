@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x97D9123DE37A484F (toso@posteo.net)
 #
 Name     : osinfo-db
-Version  : 20220830
-Release  : 25
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20220830.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20220830.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20220830.tar.xz.asc
+Version  : 20221018
+Release  : 26
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20221018.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20221018.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20221018.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20220830
-cd %{_builddir}/osinfo-db-20220830
+%setup -q -n osinfo-db-20221018
+cd %{_builddir}/osinfo-db-20221018
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1661878795
+export SOURCE_DATE_EPOCH=1666099505
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,10 +59,10 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1661878795
+export SOURCE_DATE_EPOCH=1666099505
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
-cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec || :
 %make_install
 
 %files
@@ -552,6 +552,8 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/microsoft.com/winnt-3.51.xml
 /usr/share/osinfo/os/microsoft.com/winnt-4.0.xml
 /usr/share/osinfo/os/miraclelinux.com/miraclelinux-8.4.xml
+/usr/share/osinfo/os/miraclelinux.com/miraclelinux-9-unknown.xml
+/usr/share/osinfo/os/miraclelinux.com/miraclelinux-9.0.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-0.8.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-0.9.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-1.0.xml
