@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x97D9123DE37A484F (toso@posteo.net)
 #
 Name     : osinfo-db
-Version  : 20221018
-Release  : 26
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20221018.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20221018.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20221018.tar.xz.asc
+Version  : 20221130
+Release  : 27
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20221130.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20221130.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20221130.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -37,8 +37,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20221018
-cd %{_builddir}/osinfo-db-20221018
+%setup -q -n osinfo-db-20221130
+cd %{_builddir}/osinfo-db-20221130
 %patch1 -p1
 
 %build
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1666099505
+export SOURCE_DATE_EPOCH=1669817892
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -59,7 +59,7 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1666099505
+export SOURCE_DATE_EPOCH=1669817892
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
 cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec || :
@@ -149,6 +149,7 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.14.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.15.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.16.xml
+/usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.17.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -366,6 +367,7 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/fedoraproject.org/fedora-34.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-35.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-36.xml
+/usr/share/osinfo/os/fedoraproject.org/fedora-37.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-4.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-5.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -384,6 +386,7 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/fedoraproject.org/silverblue-34.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-35.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-36.xml
+/usr/share/osinfo/os/fedoraproject.org/silverblue-37.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-rawhide.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-unknown.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-1.0.xml
@@ -518,6 +521,7 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/microsoft.com/win-10.d/post-installable-drivers.xml
 /usr/share/osinfo/os/microsoft.com/win-10.d/pre-installable-drivers.xml
 /usr/share/osinfo/os/microsoft.com/win-10.xml
+/usr/share/osinfo/os/microsoft.com/win-11.xml
 /usr/share/osinfo/os/microsoft.com/win-2.0.xml
 /usr/share/osinfo/os/microsoft.com/win-2.1.xml
 /usr/share/osinfo/os/microsoft.com/win-2k.xml
