@@ -5,16 +5,19 @@
 # Source0 file verified with key 0x97D9123DE37A484F (toso@posteo.net)
 #
 Name     : osinfo-db
-Version  : 20221130
-Release  : 27
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20221130.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20221130.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20221130.tar.xz.asc
+Version  : 20230308
+Release  : 28
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20230308.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20230308.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20230308.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: osinfo-db-data = %{version}-%{release}
 Requires: osinfo-db-license = %{version}-%{release}
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 Patch1: 0001-Add-Makefile.patch
 
 %description
@@ -37,8 +40,8 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20221130
-cd %{_builddir}/osinfo-db-20221130
+%setup -q -n osinfo-db-20230308
+cd %{_builddir}/osinfo-db-20230308
 %patch1 -p1
 
 %build
@@ -46,20 +49,20 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1669817892
+export SOURCE_DATE_EPOCH=1678464466
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1669817892
+export SOURCE_DATE_EPOCH=1678464466
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
 cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec || :
@@ -244,6 +247,7 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/debian.org/debian-1.3.xml
 /usr/share/osinfo/os/debian.org/debian-10.xml
 /usr/share/osinfo/os/debian.org/debian-11.xml
+/usr/share/osinfo/os/debian.org/debian-12.xml
 /usr/share/osinfo/os/debian.org/debian-2.0.xml
 /usr/share/osinfo/os/debian.org/debian-2.1.xml
 /usr/share/osinfo/os/debian.org/debian-2.2.xml
@@ -334,6 +338,9 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/endlessos.com/eos-3.8.xml
 /usr/share/osinfo/os/endlessos.com/eos-3.9.xml
 /usr/share/osinfo/os/endlessos.com/eos-4.0.xml
+/usr/share/osinfo/os/endlessos.com/eos-5.0.xml
+/usr/share/osinfo/os/euro-linux.com/eurolinux-8.xml
+/usr/share/osinfo/os/euro-linux.com/eurolinux-9.xml
 /usr/share/osinfo/os/fedoraproject.org/coreos-next.xml
 /usr/share/osinfo/os/fedoraproject.org/coreos-stable.xml
 /usr/share/osinfo/os/fedoraproject.org/coreos-testing.xml
@@ -404,6 +411,7 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/freebsd.org/freebsd-12.1.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-12.2.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-12.3.xml
+/usr/share/osinfo/os/freebsd.org/freebsd-12.4.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-13.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-13.1.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
@@ -470,6 +478,7 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/haiku-os.org/haiku-r1beta1.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1beta2.xml
 /usr/share/osinfo/os/haiku-os.org/haiku-r1beta3.xml
+/usr/share/osinfo/os/haiku-os.org/haiku-r1beta4.xml
 /usr/share/osinfo/os/hyperbola.info/hyperbola-03.xml
 /usr/share/osinfo/os/libosinfo.org/linux-2016.xml
 /usr/share/osinfo/os/libosinfo.org/linux-2018.xml
@@ -588,6 +597,7 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/nixos.org/nixos-21.05.xml
 /usr/share/osinfo/os/nixos.org/nixos-21.11.xml
 /usr/share/osinfo/os/nixos.org/nixos-22.05.xml
+/usr/share/osinfo/os/nixos.org/nixos-22.11.xml
 /usr/share/osinfo/os/nixos.org/nixos-unknown.xml
 /usr/share/osinfo/os/nixos.org/nixos-unstable.xml
 /usr/share/osinfo/os/novell.com/netware-4.xml
@@ -620,6 +630,8 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/openbsd.org/openbsd-6.8.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-6.9.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-7.0.xml
+/usr/share/osinfo/os/openbsd.org/openbsd-7.1.xml
+/usr/share/osinfo/os/openbsd.org/openbsd-7.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.3.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-11.0.xml
@@ -764,9 +776,11 @@ cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-lice
 /usr/share/osinfo/os/redhat.com/rhel-8.5.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.6.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.7.xml
+/usr/share/osinfo/os/redhat.com/rhel-8.8.xml
 /usr/share/osinfo/os/redhat.com/rhel-9-unknown.xml
 /usr/share/osinfo/os/redhat.com/rhel-9.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-9.1.xml
+/usr/share/osinfo/os/redhat.com/rhel-9.2.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
