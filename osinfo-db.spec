@@ -6,11 +6,11 @@
 # Source0 file verified with key 0x97D9123DE37A484F (toso@posteo.net)
 #
 Name     : osinfo-db
-Version  : 20230518
-Release  : 29
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20230518.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20230518.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20230518.tar.xz.asc
+Version  : 20230719
+Release  : 30
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20230719.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20230719.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20230719.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -41,11 +41,11 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20230518
-cd %{_builddir}/osinfo-db-20230518
-%patch1 -p1
+%setup -q -n osinfo-db-20230719
+cd %{_builddir}/osinfo-db-20230719
+%patch -P 1 -p1
 pushd ..
-cp -a osinfo-db-20230518 buildavx2
+cp -a osinfo-db-20230719 buildavx2
 popd
 
 %build
@@ -53,7 +53,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684425609
+export SOURCE_DATE_EPOCH=1689781192
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -74,7 +74,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1684425609
+export SOURCE_DATE_EPOCH=1689781192
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
 cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec || :
@@ -479,6 +479,7 @@ popd
 /usr/share/osinfo/os/freebsd.org/freebsd-9.2.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-9.3.xml
 /usr/share/osinfo/os/freedos.org/freedos-1.2.xml
+/usr/share/osinfo/os/freedos.org/freedos-1.3.xml
 /usr/share/osinfo/os/freenix.net/freenix-14.2.xml
 /usr/share/osinfo/os/gentoo.org/gentoo-rolling.xml
 /usr/share/osinfo/os/gnome.org/gnome-3.6.xml
@@ -618,6 +619,7 @@ popd
 /usr/share/osinfo/os/nixos.org/nixos-21.11.xml
 /usr/share/osinfo/os/nixos.org/nixos-22.05.xml
 /usr/share/osinfo/os/nixos.org/nixos-22.11.xml
+/usr/share/osinfo/os/nixos.org/nixos-23.05.xml
 /usr/share/osinfo/os/nixos.org/nixos-unknown.xml
 /usr/share/osinfo/os/nixos.org/nixos-unstable.xml
 /usr/share/osinfo/os/novell.com/netware-4.xml
@@ -653,6 +655,7 @@ popd
 /usr/share/osinfo/os/openbsd.org/openbsd-7.0.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-7.1.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-7.2.xml
+/usr/share/osinfo/os/openbsd.org/openbsd-7.3.xml
 /usr/share/osinfo/os/openindiana.org/hipster-rolling.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.3.xml
@@ -671,6 +674,7 @@ popd
 /usr/share/osinfo/os/opensuse.org/opensuse-15.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-15.3.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-15.4.xml
+/usr/share/osinfo/os/opensuse.org/opensuse-15.5.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.1.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-42.3.xml
@@ -886,6 +890,7 @@ popd
 /usr/share/osinfo/os/suse.com/sle-15.2.xml
 /usr/share/osinfo/os/suse.com/sle-15.3.xml
 /usr/share/osinfo/os/suse.com/sle-15.4.xml
+/usr/share/osinfo/os/suse.com/sle-15.5.xml
 /usr/share/osinfo/os/suse.com/sle-15.xml
 /usr/share/osinfo/os/suse.com/sle-unknown.xml
 /usr/share/osinfo/os/suse.com/sled-10.1.xml
@@ -909,6 +914,8 @@ popd
 /usr/share/osinfo/os/suse.com/slem-5.0.xml
 /usr/share/osinfo/os/suse.com/slem-5.1.xml
 /usr/share/osinfo/os/suse.com/slem-5.2.xml
+/usr/share/osinfo/os/suse.com/slem-5.3.xml
+/usr/share/osinfo/os/suse.com/slem-5.4.xml
 /usr/share/osinfo/os/suse.com/sles-10.1.xml
 /usr/share/osinfo/os/suse.com/sles-10.2.xml
 /usr/share/osinfo/os/suse.com/sles-10.3.xml
@@ -934,6 +941,8 @@ popd
 /usr/share/osinfo/os/system76.com/popos-19.10.xml
 /usr/share/osinfo/os/system76.com/popos-20.04.xml
 /usr/share/osinfo/os/system76.com/popos-20.10.xml
+/usr/share/osinfo/os/trisquel.info/trisquel-10.xml
+/usr/share/osinfo/os/trisquel.info/trisquel-11.xml
 /usr/share/osinfo/os/trisquel.info/trisquel-9.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-10.10.xml
