@@ -8,11 +8,11 @@
 # Source0 file verified with key 0x97D9123DE37A484F (toso@posteo.net)
 #
 Name     : osinfo-db
-Version  : 20231027
-Release  : 32
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20231027.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20231027.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20231027.tar.xz.asc
+Version  : 20231215
+Release  : 33
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20231215.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20231215.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20231215.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -43,11 +43,11 @@ license components for the osinfo-db package.
 
 
 %prep
-%setup -q -n osinfo-db-20231027
-cd %{_builddir}/osinfo-db-20231027
+%setup -q -n osinfo-db-20231215
+cd %{_builddir}/osinfo-db-20231215
 %patch -P 1 -p1
 pushd ..
-cp -a osinfo-db-20231027 buildavx2
+cp -a osinfo-db-20231215 buildavx2
 popd
 
 %build
@@ -55,7 +55,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1702042742
+export SOURCE_DATE_EPOCH=1702921782
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -96,7 +96,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1702042742
+export SOURCE_DATE_EPOCH=1702921782
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
 cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec || :
@@ -192,6 +192,7 @@ popd
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.16.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.17.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.18.xml
+/usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.19.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 /usr/share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -379,6 +380,7 @@ popd
 /usr/share/osinfo/os/endlessos.com/eos-3.9.xml
 /usr/share/osinfo/os/endlessos.com/eos-4.0.xml
 /usr/share/osinfo/os/endlessos.com/eos-5.0.xml
+/usr/share/osinfo/os/endlessos.com/eos-5.1.xml
 /usr/share/osinfo/os/euro-linux.com/eurolinux-8.xml
 /usr/share/osinfo/os/euro-linux.com/eurolinux-9.xml
 /usr/share/osinfo/os/fedoraproject.org/coreos-next.xml
@@ -416,6 +418,7 @@ popd
 /usr/share/osinfo/os/fedoraproject.org/fedora-36.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-37.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-38.xml
+/usr/share/osinfo/os/fedoraproject.org/fedora-39.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-4.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-5.xml
 /usr/share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -436,6 +439,7 @@ popd
 /usr/share/osinfo/os/fedoraproject.org/silverblue-36.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-37.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-38.xml
+/usr/share/osinfo/os/fedoraproject.org/silverblue-39.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-rawhide.xml
 /usr/share/osinfo/os/fedoraproject.org/silverblue-unknown.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-1.0.xml
@@ -456,6 +460,8 @@ popd
 /usr/share/osinfo/os/freebsd.org/freebsd-12.4.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-13.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-13.1.xml
+/usr/share/osinfo/os/freebsd.org/freebsd-13.2.xml
+/usr/share/osinfo/os/freebsd.org/freebsd-14.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.0.xml
 /usr/share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -643,6 +649,7 @@ popd
 /usr/share/osinfo/os/nixos.org/nixos-22.05.xml
 /usr/share/osinfo/os/nixos.org/nixos-22.11.xml
 /usr/share/osinfo/os/nixos.org/nixos-23.05.xml
+/usr/share/osinfo/os/nixos.org/nixos-23.11.xml
 /usr/share/osinfo/os/nixos.org/nixos-unknown.xml
 /usr/share/osinfo/os/nixos.org/nixos-unstable.xml
 /usr/share/osinfo/os/novell.com/netware-4.xml
@@ -679,6 +686,7 @@ popd
 /usr/share/osinfo/os/openbsd.org/openbsd-7.1.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-7.2.xml
 /usr/share/osinfo/os/openbsd.org/openbsd-7.3.xml
+/usr/share/osinfo/os/openbsd.org/openbsd-7.4.xml
 /usr/share/osinfo/os/openindiana.org/hipster-rolling.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.2.xml
 /usr/share/osinfo/os/opensuse.org/opensuse-10.3.xml
@@ -749,6 +757,15 @@ popd
 /usr/share/osinfo/os/oracle.com/ol-8.3.xml
 /usr/share/osinfo/os/oracle.com/ol-8.4.xml
 /usr/share/osinfo/os/oracle.com/ol-8.5.xml
+/usr/share/osinfo/os/oracle.com/ol-8.6.xml
+/usr/share/osinfo/os/oracle.com/ol-8.7.xml
+/usr/share/osinfo/os/oracle.com/ol-8.8.xml
+/usr/share/osinfo/os/oracle.com/ol-8.9.xml
+/usr/share/osinfo/os/oracle.com/ol-9-unknown.xml
+/usr/share/osinfo/os/oracle.com/ol-9.0.xml
+/usr/share/osinfo/os/oracle.com/ol-9.1.xml
+/usr/share/osinfo/os/oracle.com/ol-9.2.xml
+/usr/share/osinfo/os/oracle.com/ol-9.3.xml
 /usr/share/osinfo/os/oracle.com/solaris-11.xml
 /usr/share/osinfo/os/pureos.net/pureos-10.xml
 /usr/share/osinfo/os/pureos.net/pureos-8.xml
@@ -819,6 +836,7 @@ popd
 /usr/share/osinfo/os/redhat.com/rhel-8-unknown.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.1.xml
+/usr/share/osinfo/os/redhat.com/rhel-8.10.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.2.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.3.xml
 /usr/share/osinfo/os/redhat.com/rhel-8.4.xml
@@ -832,6 +850,7 @@ popd
 /usr/share/osinfo/os/redhat.com/rhel-9.1.xml
 /usr/share/osinfo/os/redhat.com/rhel-9.2.xml
 /usr/share/osinfo/os/redhat.com/rhel-9.3.xml
+/usr/share/osinfo/os/redhat.com/rhel-9.4.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 /usr/share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
@@ -995,6 +1014,7 @@ popd
 /usr/share/osinfo/os/ubuntu.com/ubuntu-22.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-23.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-23.10.xml
+/usr/share/osinfo/os/ubuntu.com/ubuntu-24.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
