@@ -1,5 +1,5 @@
 PKG_NAME := osinfo-db
-URL = https://releases.pagure.org/libosinfo/osinfo-db-20240510.tar.xz
+URL = https://releases.pagure.org/libosinfo/osinfo-db-20240523.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common

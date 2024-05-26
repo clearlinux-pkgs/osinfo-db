@@ -8,11 +8,11 @@
 # Source0 file verified with key 0x97D9123DE37A484F (toso@posteo.net)
 #
 Name     : osinfo-db
-Version  : 20240510
-Release  : 34
-URL      : https://releases.pagure.org/libosinfo/osinfo-db-20240510.tar.xz
-Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20240510.tar.xz
-Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20240510.tar.xz.asc
+Version  : 20240523
+Release  : 35
+URL      : https://releases.pagure.org/libosinfo/osinfo-db-20240523.tar.xz
+Source0  : https://releases.pagure.org/libosinfo/osinfo-db-20240523.tar.xz
+Source1  : https://releases.pagure.org/libosinfo/osinfo-db-20240523.tar.xz.asc
 Source2  : 97D9123DE37A484F.pkey
 Summary  : No detailed summary available
 Group    : Development/Tools
@@ -50,11 +50,11 @@ chmod 700 .gnupg
 gpg --homedir .gnupg --import %{SOURCE2}
 gpg --homedir .gnupg --status-fd 1 --verify %{SOURCE1} %{SOURCE0} > gpg.status
 grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) 97D9123DE37A484F' gpg.status
-%setup -q -n osinfo-db-20240510
-cd %{_builddir}/osinfo-db-20240510
+%setup -q -n osinfo-db-20240523
+cd %{_builddir}/osinfo-db-20240523
 %patch -P 1 -p1
 pushd ..
-cp -a osinfo-db-20240510 buildavx2
+cp -a osinfo-db-20240523 buildavx2
 popd
 
 %build
@@ -62,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1715618538
+export SOURCE_DATE_EPOCH=1716745819
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -105,7 +105,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1715618538
+export SOURCE_DATE_EPOCH=1716745819
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osinfo-db
 cp %{_builddir}/osinfo-db-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/osinfo-db/06877624ea5c77efe3b7e39b0f909eda6e25a4ec || :
@@ -393,6 +393,7 @@ GOAMD64=v2
 /usr/share/osinfo/os/endlessos.com/eos-4.0.xml
 /usr/share/osinfo/os/endlessos.com/eos-5.0.xml
 /usr/share/osinfo/os/endlessos.com/eos-5.1.xml
+/usr/share/osinfo/os/endlessos.com/eos-6.0.xml
 /usr/share/osinfo/os/euro-linux.com/eurolinux-8.xml
 /usr/share/osinfo/os/euro-linux.com/eurolinux-9.xml
 /usr/share/osinfo/os/fedoraproject.org/coreos-next.xml
@@ -641,6 +642,7 @@ GOAMD64=v2
 /usr/share/osinfo/os/netbsd.org/netbsd-1.4.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-1.5.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-1.6.xml
+/usr/share/osinfo/os/netbsd.org/netbsd-10.0.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-2.0.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-3.0.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-4.0.xml
@@ -657,6 +659,10 @@ GOAMD64=v2
 /usr/share/osinfo/os/netbsd.org/netbsd-8.1.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-8.2.xml
 /usr/share/osinfo/os/netbsd.org/netbsd-9.0.xml
+/usr/share/osinfo/os/netbsd.org/netbsd-9.1.xml
+/usr/share/osinfo/os/netbsd.org/netbsd-9.2.xml
+/usr/share/osinfo/os/netbsd.org/netbsd-9.3.xml
+/usr/share/osinfo/os/netbsd.org/netbsd-9.4.xml
 /usr/share/osinfo/os/nixos.org/nixos-20.03.xml
 /usr/share/osinfo/os/nixos.org/nixos-20.09.xml
 /usr/share/osinfo/os/nixos.org/nixos-21.05.xml
@@ -1034,6 +1040,7 @@ GOAMD64=v2
 /usr/share/osinfo/os/ubuntu.com/ubuntu-23.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-23.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-24.04.xml
+/usr/share/osinfo/os/ubuntu.com/ubuntu-24.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 /usr/share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
